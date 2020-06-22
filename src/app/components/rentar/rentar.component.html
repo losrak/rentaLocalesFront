@@ -1,0 +1,94 @@
+
+<h1>
+    Rentar de local
+</h1>
+
+<form class="form mt-5" [formGroup]="forma" (ngSubmit)="guardar()" >
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Nombre</label>
+        <div class="col">
+            <input 
+                type="text"
+                class="form-control"
+                formControlName="compania"
+                [class.is-invalid]="companiaInvalida"
+                placeholder="Compañia">
+
+            <small class="text-danger" 
+            *ngIf="companiaInvalida">ingresar Compañia</small>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Descripción</label>
+        <div class="col">
+            <textarea 
+                type="text"
+                class="form-control"
+                formControlName="descripcion"
+                placeholder="Descripción" ></textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-2 col-form-label">RFC</label>
+        <div class="col">
+            <input 
+                type="text"
+                class="form-control"
+                formControlName="rfc"
+                placeholder="RFC">
+        </div>
+    </div>
+
+    <h3 class="mt-5">Periodo de renta</h3>
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Desde</label>
+        <div class="col">
+            <input 
+                type="text"
+                class="form-control"
+                formControlName="inicio"
+                placeholder="Fecha">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Hasta</label>
+        <div class="col">
+            <input 
+                type="text"
+                class="form-control"
+                formControlName="fin"
+                placeholder="Fecha">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Local seleccionado</label>
+        <div class="col">
+            <input 
+                type="text"
+                class="form-control"
+                disabled
+                formControlName="id_local">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Cargar imagen</label>
+        <div class="col">
+            <input 
+                type="text"
+                class="form-control"
+                formControlName="imagen">
+        </div>
+    </div>
+
+    <div class="form-group row text-center">
+        <button class="btn btn-outline-primary btn-lg btn-block mb-3">Rentar</button>
+        <button class="btn btn-outline-danger btn-lg btn-block">Cancelar</button>
+    </div>
+    
+
+
+    
+</form>

@@ -1,0 +1,19 @@
+
+<h1>
+    Locales en renta, <em> ¡Contrata ya!</em>
+</h1>
+<hr>
+<div class="card-columns mt-5">
+    <div class="card" [ngClass]="{'bg-success': local.estado == 1}" *ngFor="let local of locales">
+      <div class="card-body">
+        <h3 class="card-title">Local # {{local.id}}</h3>
+        <p class="card-text"> {{local.descripcion}} </p>
+        <button 
+          class="btn btn-success"
+          (click)="rentar(local.id)"
+          *ngIf="local.estado == 0"> Alquilar </button>
+        <img ngif="local.imagen.length > 0" class="img-thumbnail rounded-circle" width="100" [src]="local.imagen" alt="">
+        Rentado por: {{ local.compania }}
+      </div>
+    </div>
+</div>
